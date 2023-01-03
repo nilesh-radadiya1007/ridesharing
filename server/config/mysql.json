@@ -1,0 +1,11 @@
+{
+    "connectionLimit": 30,
+    "charset": "utf8_general_ci",
+    "supportBigNumbers": true,
+    "bigNumberStrings": false,
+    "connectTimeout": 3600000,
+    "multipleStatements": true,
+    "waitForConnections": true,
+    "queueLimit": 0
+  }
+  

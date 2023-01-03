@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.search__result {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.search__result-item { 
+  border-bottom: 1px solid #ccc;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: max-content auto;
+  padding: 0.75rem 0;
+  padding-left: 0.5rem;
+}
+
+.search__result-item:hover { 
+  cursor: pointer;
+  background: #F3F4F6;
+}
+
+.search__result-icon {
+  align-items: center;
+  background: #ccc;
+  border-radius: 50%;
+  display: grid;
+  height: 1.5rem;
+  justify-content: center;
+  width: 1.5rem;
+}
+
+.search__result-icon svg {
+  fill: #fff;
+  height: 0.75rem;
+  width: 0.75rem;
+}
+@import url('./css/Login.css');

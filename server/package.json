@@ -1,0 +1,42 @@
+{
+  "name": "ridesharing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "region": "ap-south-1",
+    "AWSS3BucketName": "ridesharingweb",
+    "AWSCloudFormationStackName": "RideSharing"
+  },
+  "scripts": {
+    "start": "npx nodemon server",
+    "package": "aws --profile ridesharing cloudformation package --template ./aws-cloudformation.yaml --s3-bucket $npm_package_config_AWSS3BucketName --output-template packaged-sam.yaml --region $npm_package_config_region",
+    "deploy": "aws --profile ridesharing cloudformation deploy --template-file packaged-sam.yaml --stack-name $npm_package_config_AWSCloudFormationStackName --capabilities CAPABILITY_IAM --region $npm_package_config_region",
+    "package-deploy": "npm run package && npm run deploy",
+    "win-package": "aws --profile ridesharing cloudformation package --template ./aws-cloudformation.yaml --s3-bucket %npm_package_config_AWSS3BucketName% --output-template packaged-sam.yaml --region %npm_package_config_region%",
+    "win-deploy": "aws --profile ridesharing cloudformation deploy --template-file packaged-sam.yaml --stack-name %npm_package_config_AWSCloudFormationStackName% --capabilities CAPABILITY_IAM --region %npm_package_config_region%",
+    "win-package-deploy": "npm run win-package && npm run win-deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1286.0",
+    "aws-serverless-express": "^3.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.40",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.8.0",
+    "path": "^0.12.7",
+    "randomstring": "^1.2.3",
+    "request": "^2.88.2",
+    "validator": "^13.7.0"
+  }
+}
